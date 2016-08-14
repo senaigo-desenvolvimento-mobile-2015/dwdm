@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todo - Aula 2</title>
+  <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Todo <small>Exerc&iacute;cio Typescript, Jquery</small></h1>
+    </div>
+    <div class="todo">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label sr-only" for="todoItem">Todo list</label>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-console" aria-hidden="true"></span></span>
+          <input type="text" autocomplete="off" class="form-control input-lg" id="todoItem" aria-describedby="todoItem" placeholder="O que precisa ser feito? [Precione Enter para salvar]">
+        </div>
+        <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
+      </div>
+      <div class="has-success">
+        <ul class="list-group">
+          <!--<li class="list-group-item clearfix">
+              <div class="checkbox pull-left">
+                <label><input type="checkbox">Check me out</label>
+              </div>
+              <div class="button pull-right">
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Remover item da lista" data-placement="left" >
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </div>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">Todo - Fabricio Nogueira - Aula 2</p>
+      </div>
+    </footer>
+    <script data-main="./AppConfig" type="text/javascript" src="./lib/requirejs/require.js"></script>
+</body>
+
+</html>
