@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Todo - Aula 2</title>
-  <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css"> 
+  
 </head>
 
 <body>
@@ -13,7 +15,7 @@
     <div class="page-header">
       <h1>Todo <small>Exerc&iacute;cio Typescript, Jquery</small></h1>
     </div>
-    <div class="todo">
+    <div id="todo">
       <div class="form-group has-success has-feedback">
         <label class="control-label sr-only" for="todoItem">Todo list</label>
         <div class="input-group">
@@ -23,18 +25,7 @@
         <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
       </div>
       <div class="has-success">
-        <ul class="list-group">
-          <!--<li class="list-group-item clearfix">
-              <div class="checkbox pull-left">
-                <label><input type="checkbox">Check me out</label>
-              </div>
-              <div class="button pull-right">
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Remover item da lista" data-placement="left" >
-                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </button>
-              </div>
-          </li>-->
-        </ul>
+        <ul class="list-group"></ul>
       </div>
     </div>
     <footer class="footer">

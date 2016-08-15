@@ -16,5 +16,5 @@ Os todos criados são cadastrados no Storage do navegador.
 ### Configuração do projeto 
 
 ```shell
-$ bower install; typings init; typings install dt~jquery --save --global
+$ bower install; tsc; typings install dt~jquery --save --global
 ```

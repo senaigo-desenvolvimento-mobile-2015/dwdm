@@ -1,0 +1,9 @@
+.todo-desc{
+    font-size: 1.5em !important;
+    color: #666 !important;
+    font-weight: bold !important;
+}
+.finish{
+    color: #999 !important;
+    text-decoration:line-through !important;
+}

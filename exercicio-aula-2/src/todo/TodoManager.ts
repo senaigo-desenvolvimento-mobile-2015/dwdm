@@ -2,24 +2,22 @@ import {Todo} from "./Todo";
 /**
  * @Manager gerencia o acesso aos dados.
  */
-export class TodoManager{
-  private _todos: Todo[] = [];
+export class TodoManager{  
   /**
    * Adiciona um todo a lista
    */
   public add(todo:Todo) : Todo{
-    todo.id = Math.floor((Math.random() * 10000) + 1);
-    localStorage.setItem(`${todo.id}`, `{${todo.description},${todo.completed}}`);
+    if(!todo.id){
+        todo.id = Math.floor((Math.random() * 10000) + 1);
+    }  
+    localStorage.setItem(`${todo.id}`, `{"description":"${todo.description}", "completed":"${todo.completed}"}`);
     return todo;
   }
   /**
    * Remove um todo da lista
    */
   public remove(todo:Todo){
-    const index = this._todos.indexOf(todo);
-		if (index >= 0) {
-			this._todos.splice(index, 1);
-		}
+    localStorage.removeItem(`${todo.id}`);
   }
   /**
    * Recupera todos os todos adicionados na lista
@@ -29,15 +27,18 @@ export class TodoManager{
      var keys = Object.keys(localStorage);
      var i = keys.length;
      while (i--) {
-         values[localStorage.key(i)] = localStorage.getItem(keys[i])
-     }
+         values[localStorage.key(i)] = localStorage.getItem(keys[i]);        
+     }    
      return values;
   }
   /**
    * Marcar um item adicionado como completado
    */
-  public setAsCompleted(){
-
+  public setAsCompleted(todo:Todo){      
+      let old = jQuery.parseJSON(localStorage.getItem(`${todo.id}`));
+      (old.completed === "true") ? todo.completed = false : todo.completed = true;
+      todo.description = old.description;
+      this.add(todo);
   }
   /**
    * Listar itens ativos, não completados
