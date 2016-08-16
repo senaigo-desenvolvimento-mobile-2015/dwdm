@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Todo - Aula 2</title>
+  <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css"> 
@@ -13,14 +14,14 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1>Todo <small>Exerc&iacute;cio Typescript, Jquery</small></h1>
+      <h1>Todo <small>Typescript (AMD) - Jquery - Requirejs - Localstorage</small></h1>
     </div>
     <div id="todo">
       <div class="form-group has-success has-feedback">
         <label class="control-label sr-only" for="todoItem">Todo list</label>
         <div class="input-group">
           <span class="input-group-addon"><span class="glyphicon glyphicon-console" aria-hidden="true"></span></span>
-          <input type="text" autocomplete="off" class="form-control input-lg" id="todoItem" aria-describedby="todoItem" placeholder="O que precisa ser feito? [Precione Enter para salvar]">
+          <input type="text" autocomplete="off" class="form-control input-lg input-todo" id="todoItem" aria-describedby="todoItem" placeholder="O que precisa ser feito?">
         </div>
         <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
       </div>
@@ -28,9 +29,27 @@
         <ul class="list-group"></ul>
       </div>
     </div>
+    <div class="row hidden" id="button-bar">
+        <div class="col-xs-3">
+            <span id="contador" class="label label-primary"></span>
+        </div>
+        <div class="col-xs-6">
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" data-toggle="tooltip" title="Listar todos os itens" id="bttodos"><a href="javascript:void(0);" onclick="todoManager.listAll(`todos`)">Todos</a></li>
+                <li role="presentation" data-toggle="tooltip" title="Listar somente itens ativos" id="btativos"><a href="javascript:void(0);" onclick="todoManager.listAll(`ativos`)">Ativos</a></li>
+                <li role="presentation" data-toggle="tooltip" title="Listar somente itens completados" id="btcompletos"><a href="javascript:void(0);" onclick="todoManager.listAll(`completos`)">Completos</a></li>
+            </ul>
+        </div>        
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-3">
+            <button type="button" onclick="todoManager.clearCompleted()" class="btn btn-link" id="btapagartodos">Apagar completos</button>             
+        </div>        
+    </div>
     <footer class="footer">
       <div class="container">
-        <p class="text-muted text-center">Todo - Fabricio Nogueira - Aula 2</p>
+        <p class="text-muted text-center">Pressione [Enter] para salvar um item</p>
+        <p class="text-muted text-center">@todo Habilitar edição de um item</p>
+        <p class="text-muted text-center">&copy; Fabricio Nogueira - Aula 2</p>
       </div>
     </footer>
     <script data-main="./AppConfig" type="text/javascript" src="./lib/requirejs/require.js"></script>

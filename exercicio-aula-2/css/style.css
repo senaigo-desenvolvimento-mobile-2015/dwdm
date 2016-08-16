@@ -7,3 +7,30 @@
     color: #999 !important;
     text-decoration:line-through !important;
 }
+
+.input-todo{
+    height: 75px;
+    font-size: 2.5em;    
+}
+
+@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10){
+    .container{
+        width: 50% !important;
+        max-width: 50% !important;
+    }
+    .footer .container{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+::-webkit-input-placeholder { 
+    font-size: 0.5em !important;
+    font-style: italic !important;
+}
+::-moz-placeholder { font-size: 0.5em !important;font-style: italic !important; } /* firefox 19+ */
+:-ms-input-placeholder { font-size: 0.5em !important;font-style: italic !important; } /* ie */
+input:-moz-placeholder { font-size: 0.5em !important;font-style: italic !important; }
+
+.footer{
+    margin-top: 30px !important;
+}

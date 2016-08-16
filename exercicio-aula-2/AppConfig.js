@@ -6,16 +6,22 @@ requirejs.config({
         "jquery.bootstrap" : 'lib/bootstrap/dist/js/bootstrap.min',
         "todo" : 'app/todo',
         "manager" : 'app/todoManager'
-    },shim:{
-        "jquery.bootstrap" : {
-            deeps : ["jquery"]
-        }
+    },
+    shim:{
+        "jquery.bootstrap" : ["jquery"]        
     }
 });
 
 requirejs(['app', 'jquery', 'jquery.bootstrap'], (app, $) =>{
-  $('[data-toggle="tooltip"]').tooltip();
-  todoManager = new app.TodoManagerComponent("#todo");
+    todoManager = new app.TodoManagerComponent("#todo");
+    try {
+        $('body').tooltip({
+            selector: '[data-toggle="tooltip"]',
+            placement : 'bottom'
+        });
+    } catch (error) {
+        console.log(error)      
+    }
 }, (err) => {
   console.log(err)
 });
