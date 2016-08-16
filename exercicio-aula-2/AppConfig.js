@@ -12,7 +12,7 @@ requirejs.config({
     }
 });
 
-requirejs(['app', 'jquery', 'jquery.bootstrap'], (app, $) =>{
+requirejs(['app', 'jquery', 'jquery.bootstrap'], function(app, $){
     todoManager = new app.TodoManagerComponent("#todo");
     try {
         $('body').tooltip({
@@ -22,6 +22,6 @@ requirejs(['app', 'jquery', 'jquery.bootstrap'], (app, $) =>{
     } catch (error) {
         console.log(error)      
     }
-}, (err) => {
+}, function(err){
   console.log(err)
 });

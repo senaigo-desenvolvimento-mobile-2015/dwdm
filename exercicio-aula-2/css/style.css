@@ -34,3 +34,12 @@ input:-moz-placeholder { font-size: 0.5em !important;font-style: italic !importa
 .footer{
     margin-top: 30px !important;
 }
+
+.github-corner svg{
+    position:absolute;
+    right:0;
+    top:0;
+    mix-blend-mode:darken;color:#ffffff;
+    fill:#000000;
+    
+}

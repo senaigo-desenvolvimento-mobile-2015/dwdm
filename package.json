@@ -1,0 +1,14 @@
+{
+  "name": "dwdm",
+  "version": "0.0.1",
+  "private": true,
+  "env" : "development",
+  "author": "Fabricio Nogueira",
+  "devDependencies": {
+    "grunt": "^0.4.5",    
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-htmlmin": "^1.4.0",    
+    "grunt-contrib-uglify": "^1.0.0"
+  }
+}
