@@ -1,4 +1,4 @@
-var curLocation = (window.location.hostname === "localhost") ? "/" : "/tree/gh-pages/"; 
+var curLocation = (window.location.hostname === "localhost") ? "/" : "/dwdm/"; 
 requirejs.config({
     baseUrl: curLocation,
     paths: {
