@@ -2,11 +2,11 @@ var curLocation = (window.location.hostname === "localhost") ? "/" : "/tree/gh-p
 requirejs.config({
     baseUrl: curLocation,
     paths: {
-        "app" : 'app/app',
-        "jquery" : 'lib/jquery/dist/jquery.min',
-        "jquery.bootstrap" : 'lib/bootstrap/dist/js/bootstrap.min',
-        "todo" : 'app/todo',
-        "manager" : 'app/todoManager'
+        "app" : './app/app',
+        "jquery" : './lib/jquery/dist/jquery.min',
+        "jquery.bootstrap" : './lib/bootstrap/dist/js/bootstrap.min',
+        "todo" : './app/todo',
+        "manager" : './app/todoManager'
     },
     shim:{
         "jquery.bootstrap" : ["jquery"]        
