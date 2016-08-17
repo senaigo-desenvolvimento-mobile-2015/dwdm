@@ -1,5 +1,6 @@
+var curLocation = (window.location.hostname === "localhost") ? "/" : "/tree/gh-pages"; 
 requirejs.config({
-    baseUrl: '/',
+    baseUrl: curLocation,
     paths: {
         "app" : 'app/app',
         "jquery" : 'lib/jquery/dist/jquery.min',
@@ -13,18 +14,13 @@ requirejs.config({
 });
 
 requirejs(['app', 'jquery', 'jquery.bootstrap'], function(app, $){
+    (window.location.hostname === "localhost") ? $("base").val("/") : $("base").val("/tree/gh-pages");
     todoManager = new app.TodoManagerComponent("#todo");
-    var curLocation = window.location.hostname;
     try {
         $('body').tooltip({
             selector: '[data-toggle="tooltip"]',
             placement : 'bottom'
-        });
-        if(curLocation === "localhost"){
-            $("base").val("/");
-        }else{
-            $("base").val("/tree/gh-pages");
-        }
+        });    
     } catch (error) {
         console.log(error)      
     }
