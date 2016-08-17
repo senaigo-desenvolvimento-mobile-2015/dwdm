@@ -27,3 +27,7 @@ Prof. Ms. Daniel Ferreira
   - `typings init`
   - `typings install dt~jquery --save --global`
   
+#### Compilar, commit e publicação hg-pages.
+```
+$ grunt; git add .; git commit -m"dist"; git push -u origin master; git subtree push --prefix dist/dwdm-0.0.1/ origin gh-pages
+```
