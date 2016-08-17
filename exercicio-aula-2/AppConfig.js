@@ -14,11 +14,17 @@ requirejs.config({
 
 requirejs(['app', 'jquery', 'jquery.bootstrap'], function(app, $){
     todoManager = new app.TodoManagerComponent("#todo");
+    var curLocation = window.location.hostname;
     try {
         $('body').tooltip({
             selector: '[data-toggle="tooltip"]',
             placement : 'bottom'
         });
+        if(curLocation === "localhost"){
+            $("base").val("/");
+        }else{
+            $("base").val("/tree/gh-pages");
+        }
     } catch (error) {
         console.log(error)      
     }
